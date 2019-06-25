@@ -1,4 +1,13 @@
 // Find the maximum
+var n1 = 6;
+var n2 = 3;
+function maxOfTwoNumbers(n1,n2) {
+  if (n1 > n2) {
+    return n1;
+  } else {
+    return n2;
+  }
+}
 
 // Finding Longest Word
 var words = [
@@ -11,14 +20,44 @@ var words = [
   'crackpot'
 ];
 
+function findLongestWord(arg) {
+  if(arg.length === 0){
+    return;
+  }
+  var longestWord = "";
+  for (i = 0; i < arg.length; i++) {
+    if (longestWord.length < arg[i].length) {
+      longestWord = arg[i];
+    }
+  }
+  return longestWord;
+}
+
 // Calculating a Sum
 
 var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+
+function sumArray(arg) {
+  let sum = 0;
+  for (let i = 0; i < arg.length; i++){
+    sum = sum + arg[i];
+  }
+  return sum;
+}
 
 // Calculate the Average
 
 var numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+function averageNumbers(arg) {
+    
+  if (arg.length === 0) {
+    return;
+  }
+  var average = sumArray(arg) / arg.length;
+    return average;
+  }
+  
 // Array of Strings
 var wordsArr = [
   'seat',
@@ -32,6 +71,18 @@ var wordsArr = [
   'fuel',
   'palace'
 ];
+
+
+function averageWordLength(arg) {
+  if(arg.length === 0) {
+    return;
+  }
+  var cont = 0;
+  for (var i = 0; i < arg.length; i++){
+    cont += arg[i].length;
+  }
+  return cont / arg.length;
+}
 
 // Unique Arrays
 var wordsUnique = [
@@ -48,6 +99,22 @@ var wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray (arg) {
+  if(arg.length === 0) {
+    return;
+  }
+  for (var i = 0; i < arg.length; i++) {
+    for (var j = 0; j < arg.length; j++){
+      if (i != j) {
+      if (arg[i] === arg[j]) {
+        arg.splice(j,1);
+      }
+    } 
+  }
+  }
+  return arg;
+}
+
 // Finding Elements
 var wordsFind = [
   'machine',
@@ -59,6 +126,16 @@ var wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist(arg1,arg2){
+for (var i = 0; i < arg1.length; i++) {
+  if (arg2 === arg1[i]) {
+    return true;
+    }
+  }
+ return false; 
+}
+
 
 // Counting Repetion
 var wordsCount = [
@@ -74,6 +151,21 @@ var wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(arg1,arg2) {
+  if(arg1.length === 0) {
+    return false;
+  }
+  var cont = 0;
+  for (var i = 0; i < arg1.length; i++) {
+    if (arg2 === arg1[i]) {
+      cont = cont + 1;
+      }
+    }
+    return cont;
+  }
+
+
 // Bonus Quest
 
 var matrix = [
